@@ -1,14 +1,25 @@
-= Christian Neukirchen's Ruby Style Guide
+WeatherBill's Ruby Style Guide
+==============================
 
-You may not like all rules presented here, but they work very well for
-me and have helped producing high quality code.  Everyone is free to
-code however they want, write and follow their own style guides, but
-when you contribute to my code, please follow these rules:
+Follow these rules when writing Ruby code at WeatherBill. 
+
+With apologies to [PEP 8](http://www.python.org/dev/peps/pep-0008/):
 
 
-== Formatting:
+>  Two good reasons to break a particular rule:
+>
+>  (1) When applying the rule would make the code less readable, even for
+>  someone who is used to reading code that follows the rules.
+>
+>  (2) To be consistent with surrounding code that also breaks it (maybe for
+>  historic reasons) -- although this is also an opportunity to clean up
+>  someone else's mess (in true XP style).
 
-* Use ASCII (or UTF-8, if you have to).
+
+Formatting:
+-----------
+
+* Use ASCII or UTF-8
 
 * Use 2 space indent, no tabs.
 
@@ -32,12 +43,13 @@ when you contribute to my code, please follow these rules:
 
 * Use empty lines to break up a long method into logical paragraphs.
 
-* Keep lines fewer than 80 characters.
+* Aim for 80 character lines, go longer when readability is enhanced.
 
-* Avoid trailing whitespace.
+* No trailing whitespace.
 
 
-== Syntax:
+Syntax:
+-------
 
 * Use def with parentheses when there are arguments.
 
@@ -60,11 +72,7 @@ when you contribute to my code, please follow these rules:
     x = Math.sin(y)
     array.delete e
 
-* Prefer {...} over do...end.  Multiline {...} is fine: having
-  different statement endings (} for blocks, end for if/while/...)
-  makes it easier to see what ends where.  But use do...end for
-  "control flow" and "method definitions" (e.g. in Rakefiles and
-  certain DSLs.)  Avoid do...end when chaining.
+* Use {...} for single line blocks, and do...end for multiline blocks.
 
 * Avoid return where not required.
 
@@ -80,7 +88,8 @@ when you contribute to my code, please follow these rules:
   =~, $0-9, $~, $` and $' when needed.
 
 
-== Naming:
+Naming:
+-------
 
 * Use snake_case for methods.
 
@@ -92,22 +101,22 @@ when you contribute to my code, please follow these rules:
 * The length of an identifier determines its scope.  Use one-letter
   variables for short block/method parameters, according to this
   scheme:
-
-    a,b,c: any object
-    d: directory names
-    e: elements of an Enumerable
-    ex: rescued exceptions
-    f: files and file names
-    i,j: indexes
-    k: the key part of a hash entry
-    m: methods
-    o: any object
-    r: return values of short methods
-    s: strings
-    v: any value
-    v: the value part of a hash entry
-    x,y,z: numbers
-
+<code>
+      a,b,c: any object
+      d: directory names
+      e: elements of an Enumerable
+      ex: rescued exceptions
+      f: files and file names
+      i,j: indexes
+      k: the key part of a hash entry
+      m: methods
+      o: any object
+      r: return values of short methods
+      s: strings
+      v: any value
+      v: the value part of a hash entry
+      x,y,z: numbers
+</code>
   And in general, the first letter of the class name if all objects
   are of that type.
 
@@ -122,7 +131,8 @@ when you contribute to my code, please follow these rules:
   size over length.
 
 
-== Comments:
+Comments:
+---------
 
 * Comments longer than a word are capitalized and use punctuation.
   Use two spaces after periods.
@@ -130,7 +140,8 @@ when you contribute to my code, please follow these rules:
 * Avoid superfluous comments.
 
 
-== The rest:
+The rest:
+---------
 
 * Write ruby -w safe code.
 
@@ -154,7 +165,8 @@ when you contribute to my code, please follow these rules:
 * Avoid needless metaprogramming.
 
 
-== General:
+General:
+--------
 
 * Code in a functional way, avoid mutation when it makes sense.
 
