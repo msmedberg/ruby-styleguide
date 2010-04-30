@@ -43,7 +43,7 @@ Formatting:
 
 * Use empty lines to break up a long method into logical paragraphs.
 
-* Aim for 80 character lines, go longer when readability is enhanced.
+* Aim for 80 character lines, longer is ok for readability. In particular, longer postfix statement modifiers are ok.
 
 * No trailing whitespace.
 
